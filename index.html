@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>form </title>
+</head>
+
+<body>
+
+    <div class="w-100 position-fixed top-0">
+        <header class="header container">
+            <nav class="d-md-flex  justify-content-between align-content-center p-3 nav-bar position-relative">
+                <h1 class="text-light">Logo</h1>
+                <ul class="d-md-flex list-unstyled mt-2 fs-4">
+                    <li class="align-content-center">
+                        <a href="" class="me-5 text-decoration-none text-light">Home</a>
+                    </li>
+                    <li class="align-content-center">
+                        <a href="" class="me-5 text-decoration-none text-light">About</a>
+                    </li>
+                    <li class="align-content-center">
+                        <a href="" class="me-5 text-decoration-none text-light">Services</a>
+                    </li>
+                    <li class="align-content-center">
+                        <a href="" class="me-5 text-decoration-none text-light">Contact</a>
+                    </li>
+                    <li class="align-content-center">
+                        <button class="btn btn-primary modal-login-btn fw-bold" id="modal-login-btn">LogIn</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+
+    <section>
+        <div class="login-form d-flex justify-content-center align-items-center shadow" id="modal">
+            <div class="login-form-text Login p-4" id="login-form-text">
+                <h1 class="text-center mb-5 text-light">LogIn</h1>
+                <form action="#">
+                    <div class="input-box mb-5">
+                        <span class="icons"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" required>
+                        <label for="">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icons"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+
+                    <div class="remember-forget d-flex justify-content-between mt-3">
+                        <label class="text-light"><input type="checkbox" class="me-1">Remember me</label>
+                        <a href="#" class="text-decoration-none text-light">Forgot Password?</a>
+                    </div>
+
+                    <button class="btn btn-light text-dark fs-5 fw-bold mt-5 w-100">Login</button>
+
+                    <div class="login-register">
+                        <p class="text-center mt-4 text-light">Don't have an account? <a href="#"
+                                class="text-decoration-none text-light" id="Register">Register</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="login-form-text p-4 Register">
+                <h1 class="text-center mb-5 text-light">Registeration</h1>
+                <form action="#">
+                    <div class="input-box mb-5">
+                        <span class="icons"><i class="fa-regular fa-user"></i></i></span>
+                        <input type="text" required>
+                        <label for="">Username</label>
+                    </div>
+
+                    <div class="input-box mb-5">
+                        <span class="icons"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" required>
+                        <label for="">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icons"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+
+                    <div class="remember-forget d-flex justify-content-between mt-3">
+                        <label class="text-light"><input type="checkbox" class="me-1">I Agree to the trems &
+                            conditions</label>
+
+                    </div>
+
+                    <button class="btn btn-light text-dark fs-5 fw-bold mt-5 w-100">Register</button>
+
+                    <div class="login-register">
+                        <p class="text-center mt-4 text-light">Already have an account? <a href="#"
+                                class="text-decoration-none text-light" id="login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="close-btn d-flex justify-content-center align-items-center" id="close-btn">
+                <span><i class="fa-solid fa-xmark"></i></span>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        modalLoginBtn = document.getElementById('modal-login-btn')
+        registerBtn = document.getElementById('Register')
+        loginBtn = document.getElementById('login')
+        modalCloseBtn = document.getElementById('close-btn')
+        modal = document.getElementById('modal')
+        loginFormText = document.getElementById('login-form-text')
+
+        registerBtn.addEventListener('click', ()=>{
+            modal.classList.add('active')
+        })
+
+        loginBtn.addEventListener('click', ()=>{
+            modal.classList.remove('active')
+        })
+
+        modalLoginBtn.addEventListener('click', ()=>{
+            modal.classList.add('active-popup')
+        })
+
+        modalCloseBtn.addEventListener('click', ()=>{
+            modal.classList.remove('active-popup')
+            
+        })
+    </script>
+</body>
+
+</html>

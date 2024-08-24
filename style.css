@@ -1,0 +1,156 @@
+body{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/websites/images/formBackground.jpg') no-repeat !important;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form{
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    position: relative;
+    transition: transform .18s ease ,height .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.nav-bar a {
+    position: relative;
+}
+
+.nav-bar ul li a::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .3s linear;
+}
+
+.nav-bar ul li a:hover::after{
+    transform: scale(1);
+    transform-origin: left;
+}    
+
+.nav-bar button{
+    width: 115px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+}
+
+.nav-bar button:hover{
+    background-color: rgba(0, 0, 0, 0.723);
+    border: 2px solid rgba(0, 0, 0, 0.337);
+    
+}
+ 
+.login-form.active-popup{
+    transform: scale(1);
+}
+
+.Login{
+    transition: transform .5s ease;
+    transform: translateX();
+}
+
+
+.login-form.active .login-form-text.Register{
+    transition: transform .5s ease;
+    transform: translateX(0);
+}
+.login-form.active{
+    height: 600px;
+}
+
+.login-form.active .login-form-text.Login{
+    transform: translateX(-500px);
+    transition: none;
+}
+
+.login-form-text{
+    min-width: 100%;
+}
+
+
+.Register{
+    position: absolute;
+    transition: none;
+    transform: translateX(500px);
+}
+
+
+
+.input-box{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    position: relative;
+}
+
+.input-box input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.input-box label{
+    color: white;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline !important;
+}
+
+.login-register p a:hover{
+    text-decoration: underline !important;
+}
+
+.modal-login-btn{
+    background-color: none !important;
+    border: none;
+    outline: none;
+    width: 60px;
+}
+
+
+.icons{
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.input-box input:focus~label,.input-box input:valid~label {
+    transform: translateY(-30px);
+    transition: transform 0.2s ease ;
+}
+
+.close-btn{
+    position: absolute;
+    background-color: white;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.input-box input{
+    color: white;
+}
